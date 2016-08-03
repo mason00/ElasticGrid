@@ -62,6 +62,8 @@
     <Content Include="Scripts\jasmine\jasmine-html.js" />
     <Content Include="Scripts\jasmine\jasmine.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\Plugin.js" />
+    <Content Include="Scripts\PluginSpec.js" />
     <Content Include="Scripts\stringExtension.js" />
     <Content Include="Scripts\stringExtensionSpec.js" />
   </ItemGroup>
