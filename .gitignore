@@ -1,0 +1,6 @@
+packages/
+ElasticGrid/Bin/
+ElasticGrid/obj/
+TestResults/
+Tests/Bin/
+Tests/obj/
