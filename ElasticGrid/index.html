@@ -7,8 +7,12 @@
             .controller("ContactController", function ($scope) {
                 $scope.test = "Hello";
 
-                $scope.contacts = [{ name: "Mason", mobile: "0431868125", email: "mason_hzx@hotmail.com", id: 1 },
-                                   { name: "Coco", mobile: "868125", email: "coco@hotmail.com", id: 2 }];
+                getContacts = function () {
+                    return [{ name: "Mason", mobile: "0431868125", email: "mason_hzx@hotmail.com", id: 1 },
+                            { name: "Coco", mobile: "868125", email: "coco@hotmail.com", id: 2 }];
+                }
+
+                $scope.contacts = getContacts();
                 
                 $scope.saveContact = function () {
                     //$.ajax call to save
