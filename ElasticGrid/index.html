@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html ng-app="ElasticApp">
+<head>
+    <script src="Scripts/Angular/angular.js"></script>
+    <script>
+        angular.module("ElasticApp", [])
+            .controller("ContactController", function ($scope) {
+                $scope.test = "Hello";
+
+                $scope.contacts = [{ name: "Mason", mobile: "0431868125", email: "mason_hzx@hotmail.com", id: 1 },
+                                   { name: "Coco", mobile: "868125", email: "coco@hotmail.com", id: 2 }];
+                
+                $scope.saveContact = function () {
+                    //$.ajax call to save
+                    console.log('saveContact get called with contact: ' + $scope.newcontact);                        
+                }
+
+                $scope.edit = function (id) {
+                    console.log('edit get called with id: ' + id);                        
+                }
+
+                $scope.delete = function (id) {
+                    console.log('delete get called with id: ' + id);                        
+                }
+        });
+    </script>
+</head>
+<body>
+    <div ng-controller="ContactController">
+        <h1>{{test}}</h1>
+        <form>
+            <label>Name</label>
+            <input type="text" name="name" ng-model="newcontact.name" />
+            <label>Mobile</label>
+            <input type="text" name="mobile" ng-model="newcontact.mobile" />
+            <label>Email</label>
+            <input type="text" name="email" ng-model="newcontact.email" />
+            <br />
+            <input type="hidden" ng-model="newcontact.id" />
+            <input type="button" value="Save" ng-click="saveContact()" />
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contact in contacts">
+                    <td>{{ contact.name }}</td>
+                    <td>{{ contact.mobile }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>
+                        <a href="#" ng-click="edit(contact.id)">edit</a> |
+                        <a href="#" ng-click="delete(contact.id)">delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
