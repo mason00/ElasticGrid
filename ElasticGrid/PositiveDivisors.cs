@@ -4,18 +4,15 @@ namespace ElasticGrid
 {
     public static class PositiveDivisors
     {
-        public static int[] OutputPositiveDivisor(int input)
+        public static IEnumerable<int> OutputPositiveDivisor(int input)
         {
-            var buffer = new List<int>();
             for (int i = 1; i <= input; i++)
             {
                 if (input % i == 0)
                 {
-                    buffer.Add(i);
+                    yield return i;
                 }
             }
-
-            return buffer.ToArray();
         }
     }
 }
